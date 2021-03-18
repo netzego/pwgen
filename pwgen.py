@@ -3,19 +3,9 @@ import random
 import string
 from functools import reduce
 from operator import add
-from pprint import pprint
 
 import click
-
-
-def debug(func):
-    def wrapper(*args, **kwargs):
-        if args:
-            pprint(f"*args: {args}")
-        if kwargs:
-            pprint(f"**kwargs: {kwargs}")
-        return func(*args, **kwargs)
-    return wrapper
+# import debug
 
 
 @click.command()
@@ -50,6 +40,7 @@ def main(length, charclass):
     print(randstr)
 
 
+# @debug.debug
 def generate_charmap(chrcls_tup: tuple) -> str:
     """
     """
