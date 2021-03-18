@@ -3,7 +3,7 @@
 all: install
 
 run:
-	.venv/bin/pyskel
+	.venv/bin/pwgen
 
 clean:
 	rm -fr */__pycache__
