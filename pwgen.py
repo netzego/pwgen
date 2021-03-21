@@ -5,7 +5,6 @@ from functools import reduce
 from operator import add
 
 import click
-# import debug
 
 
 @click.command()
@@ -40,9 +39,20 @@ def main(length, charclass):
     print(randstr)
 
 
-# @debug.debug
+def generate_randstr(length: int, charmap: str) -> str:
+    """
+    Generates a random string of ``length``. Choosen characters from
+    ``charmap``.
+    """
+    srand = random.SystemRandom()
+    #return "".join([srand.choice(charmap) for _ in range(length)])
+    return "".join(list(map(lambda _: srand.choice(charmap), range(length))))
+
+
 def generate_charmap(chrcls_tup: tuple) -> str:
     """
+    Returns a string which includes all selected characters choosen by one or
+    more charclass names.
     """
     return "".join(set(reduce(add, map(convert_charclass, chrcls_tup))))
 
@@ -70,16 +80,6 @@ def convert_charclass(chrcls: str) -> str:
     if chrcls == "upper":
         return string.ascii_uppercase
     raise ValueError
-
-
-def generate_randstr(length: int, charmap: str) -> str:
-    srand = random.SystemRandom()
-    # randstr = ""
-    # for _ in range(length):
-    #     randstr += srand.choice(charmap)
-    # return randstr
-    # return "".join([srand.choice(charmap) for _ in range(length)])
-    return "".join(list(map(lambda _: srand.choice(charmap), range(length))))
 
 
 if __name__ == "__main__":
