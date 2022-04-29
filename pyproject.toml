@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "pyskel"
+name = "pwgen"
 version = "0.0.0"
 license = "GPL-3.0-only"
 authors = ["netzego <no-reply@github.com>"]
 description = "A skeleton for python projects with poetry in a makefile"
 readme = "README.md"
-homepage = "https://github.com/netzego/pyskel"
-repository = "git@github.com:netzego/pyskel.git"
+homepage = "https://github.com/netzego/pwgen"
+repository = "git@github.com:netzego/pwgen.git"
 
 [tool.poetry.dependencies]
 python = "^3.10"
